@@ -1,5 +1,5 @@
-data/raw
-data/vectorstore/
-data/sessions/
+data/raw/*
+data/vectorstore/*
+data/sessions/*
 __pycache__/
 .DS_Store

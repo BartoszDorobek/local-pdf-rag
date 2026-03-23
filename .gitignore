@@ -1,3 +1,4 @@
+data/raw
 data/vectorstore/
 data/sessions/
 __pycache__/

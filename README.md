@@ -1,10 +1,10 @@
-# myRAG
+# Local PDF RAG
 
-Local RAG pipeline using FAISS and Ollama.
+Local Retrieval-Augmented Generation (RAG) pipeline for ingesting and querying PDF documents using Ollama.
 
 ## Quick start
 
-Create a virtual environment (Python 3.10+) and install dependencies:
+Install dependencies:
 
 ```bash
 pip install -r requirements.txt
@@ -46,20 +46,18 @@ src/
   main.py      # CLI entry point
   ingest.py    # Offline ingestion pipeline
   chain.py     # Conversational retrieval chain
-  utils.py     # Shared utilities (embeddings, storage, sessions)
+  utils.py     # Shared utilities
 data/
   raw/         # Source PDFs
   vectorstore/ # Persisted FAISS index
   sessions/    # Stored chat histories
 ```
 
-## Environment variables
+## Models setup
 
-- `EMBEDDINGS_MODEL_NAME` - override default `sentence-transformers/all-MiniLM-L6-v2`
-  embeddings model.
-- `OLLAMA_BASE_URL` - point LangChain to a remote/local Ollama server if needed.
+- Embeddings model: `sentence-transformers/all-MiniLM-L6-v2`
 
-## Notes
+- LLM: Ollama llama3.2:1b model
 
-- Ensure Ollama is running with a compatible chat model (default `mistral`).
-- Add `data/vectorstore` and `data/sessions` to `.gitignore` for cleanliness in VCS.
+  1. Install Ollama: https://ollama.com/download
+  2. Pull model `ollama pull llama3.2:1b`

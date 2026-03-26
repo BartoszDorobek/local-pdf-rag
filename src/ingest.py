@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import sys
 from pathlib import Path
 from typing import Sequence
 
@@ -65,15 +64,3 @@ def ingest(source: Path | None = None) -> int:
 
     save_vectorstore(store)
     return len(chunks)
-
-
-def main(argv: Sequence[str] | None = None) -> None:
-    argv = list(argv or sys.argv[1:])
-    source = Path(argv[0]) if argv else None
-    added = ingest(source)
-    print(f"Ingestion complete. Added {added} chunks to the vector store.")
-
-
-if __name__ == "__main__":
-    main()
-

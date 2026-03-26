@@ -3,7 +3,6 @@ from __future__ import annotations
 import argparse
 import sys
 from pathlib import Path
-
 from typing import Sequence
 
 from .chain import chat
@@ -72,6 +71,6 @@ def main(argv: Sequence[str] | None = None) -> int:
     return 1
 
 
-if __name__ == "__main__":  # pragma: no cover - CLI entry
+if __name__ == "__main__": 
     sys.exit(main())
 

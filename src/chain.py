@@ -18,6 +18,8 @@ from .utils import (
 
 
 def build_chain(model: str = "llama3.2:1b") -> ConversationalRetrievalChain:
+    """Build and return a conversational retrieval chain backed by Ollama."""
+
     embeddings = get_embeddings()
     vectorstore = load_vectorstore(embeddings)
     if not vectorstore:
@@ -57,7 +59,6 @@ def chat(
         session_id = generate_session_id()
 
     history = load_session_history(session_id)
-    # Preload memory with existing history
     for user, assistant in history:
         chain.memory.chat_memory.add_user_message(user)
         chain.memory.chat_memory.add_ai_message(assistant)
@@ -67,4 +68,3 @@ def chat(
 
     append_to_session(session_id, question, answer)
     return session_id, answer
-

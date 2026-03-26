@@ -4,3 +4,4 @@ langchain-huggingface
 langchainhub
 faiss-cpu
 pypdf
+streamlit

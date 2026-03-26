@@ -1,4 +1,5 @@
-# Local PDF RAG
+
+# Local PDF RAG  ![Ollama](https://img.shields.io/badge/ollama-%23000000.svg?style=for-the-badge&logo=ollama&logoColor=white) ![LangChain](https://img.shields.io/badge/langchain-%231C3C3C.svg?style=for-the-badge&logo=langchain&logoColor=white)
 
 Local Retrieval-Augmented Generation (RAG) pipeline for ingesting and querying PDF documents using Ollama.
 
